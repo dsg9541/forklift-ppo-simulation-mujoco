@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+**/train_model/
+tensorboard_logs*/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

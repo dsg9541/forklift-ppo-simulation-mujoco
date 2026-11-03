@@ -1,0 +1,329 @@
+{
+  "environment": [
+    {
+      "type": "stack",
+      "name": "A1",
+      "x": -10.0,
+      "y": 7.0,
+      "yaw": 90.0,
+      "layers": 1,
+      "layer_bottoms": [
+        0.0
+      ],
+      "top_z": 0.52,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "A2",
+      "x": -6.5,
+      "y": 7.0,
+      "yaw": 90.0,
+      "layers": 2,
+      "layer_bottoms": [
+        0.0,
+        0.52
+      ],
+      "top_z": 1.04,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "A3",
+      "x": -3.0,
+      "y": 7.0,
+      "yaw": 90.0,
+      "layers": 1,
+      "layer_bottoms": [
+        0.0
+      ],
+      "top_z": 0.52,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "A4",
+      "x": 0.5,
+      "y": 7.0,
+      "yaw": 90.0,
+      "layers": 2,
+      "layer_bottoms": [
+        0.0,
+        0.52
+      ],
+      "top_z": 1.04,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "B1",
+      "x": -10.0,
+      "y": -1.0,
+      "yaw": 90.0,
+      "layers": 2,
+      "layer_bottoms": [
+        0.0,
+        0.52
+      ],
+      "top_z": 1.04,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "B2",
+      "x": -6.5,
+      "y": -1.0,
+      "yaw": 90.0,
+      "layers": 1,
+      "layer_bottoms": [
+        0.0
+      ],
+      "top_z": 0.52,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "B3",
+      "x": -3.0,
+      "y": -1.0,
+      "yaw": 90.0,
+      "layers": 2,
+      "layer_bottoms": [
+        0.0,
+        0.52
+      ],
+      "top_z": 1.04,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "B4",
+      "x": 0.5,
+      "y": -1.0,
+      "yaw": 90.0,
+      "layers": 1,
+      "layer_bottoms": [
+        0.0
+      ],
+      "top_z": 0.52,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "stack",
+      "name": "P1",
+      "x": 8.0,
+      "y": -6.0,
+      "yaw": -90.0,
+      "layers": 3,
+      "layer_bottoms": [
+        0.0,
+        0.52,
+        1.04
+      ],
+      "top_z": 1.56,
+      "size": {
+        "pallet_L": 0.7,
+        "pallet_W": 0.8,
+        "pallet_H": 0.15,
+        "cargo_L": 0.62,
+        "cargo_W": 0.8,
+        "cargo_H": 0.3,
+        "layer_step": 0.52
+      }
+    },
+    {
+      "type": "drop_zone",
+      "name": "G1",
+      "x": 8.0,
+      "y": 2.0,
+      "yaw": 90.0,
+      "z": 0.0,
+      "size": {
+        "L": 1.2,
+        "W": 1.2,
+        "H": 0.01
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_crate_1",
+      "x": 12.6,
+      "y": -6.8,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 0.6,
+        "W": 0.6,
+        "H": 0.6
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_crate_2",
+      "x": -14.6,
+      "y": 8.6,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 0.6,
+        "W": 0.6,
+        "H": 0.6
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_crate_3",
+      "x": -14.6,
+      "y": -7.4,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 0.6,
+        "W": 0.6,
+        "H": 0.6
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_crate_4",
+      "x": 12.6,
+      "y": 8.6,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 0.6,
+        "W": 0.6,
+        "H": 0.6
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_wall_n",
+      "x": 0.0,
+      "y": 11.5,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 31.5,
+        "W": 0.5,
+        "H": 2.0
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_wall_s",
+      "x": 0.0,
+      "y": -8.5,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 31.5,
+        "W": 0.5,
+        "H": 2.0
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_wall_w",
+      "x": -15.5,
+      "y": 1.5,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 0.5,
+        "W": 20.5,
+        "H": 2.0
+      }
+    },
+    {
+      "type": "obstacle",
+      "name": "obstacle_wall_e",
+      "x": 15.5,
+      "y": 1.5,
+      "yaw": 0.0,
+      "z": 0.0,
+      "size": {
+        "L": 0.5,
+        "W": 20.5,
+        "H": 2.0
+      }
+    },
+    {
+      "type": "forklift",
+      "name": "forklift_init",
+      "x": 12.5,
+      "y": 3.1,
+      "yaw": 180.0,
+      "z": 0.0,
+      "size": {
+        "L": 2.34,
+        "W": 1.2,
+        "H": 0.3
+      }
+    }
+  ]
+}

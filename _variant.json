@@ -1,0 +1,24 @@
+{
+  "base": "C:\\Users\\18852\\Documents\\Codex\\2026-09-17\\superpowers-plugin-superpowers-openai-api-curated-5\\work\\versions\\r_turn6k_v3",
+  "label": "v3_fwd046",
+  "ts": "2026-09-24 23:29:00",
+  "changes": [
+    {
+      "code": "diag_prerelease",
+      "arg": ""
+    },
+    {
+      "code": "radar_load_sites",
+      "arg": ""
+    },
+    {
+      "code": "radar_load",
+      "arg": ""
+    },
+    {
+      "code": "radar_fwd",
+      "arg": "0.046"
+    }
+  ],
+  "files": 86
+}

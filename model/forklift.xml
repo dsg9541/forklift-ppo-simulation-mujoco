@@ -1,0 +1,190 @@
+<mujoco model="forklift_scene">
+  <compiler angle="radian"/>
+  <!-- 优化物理求解器，防止转向卡死 -->
+  <option timestep="0.002"
+          iterations="50"
+          solver="Newton"
+          cone="elliptic"
+          impratio="1"
+          gravity="0 0 -9.81"/>
+
+  <worldbody>
+    <light directional="true" pos="3 5 4" dir="-1 -1 -1"/>
+    <geom name="floor" type="plane" size="10 10 0.1" rgba="0.9 0.9 0.9 1" friction="1.2"/>
+
+    <!-- 目标标记（货架位置上方） -->
+    <body name="goal_marker" pos="6 0 1.41">
+      <geom type="box" size="0.2 0.2 0.01" rgba="1 0 0 0.5" contype="0" conaffinity="0"/>
+    </body>
+
+    <!-- 托盘（位于货物下方） -->
+    <body name="pallet1" pos="-3 0 0.075">
+      <freejoint/>
+      <geom name="pallet_top" type="box" size="0.35 0.4 0.015" pos="0 0 0.135" mass="15" rgba="0.6 0.4 0.2 1" friction="1.5 1 1" contype="1" conaffinity="1" solref="0.002 1" solimp="0.99 0.999 0.0001" condim="6" />
+      <geom name="pallet_block_center" type="box" size="0.275 0.035 0.08" pos="0 0 0.05" mass="2" rgba="0.3 0.2 0.1 1" friction="1.5 0.1 0.1" contype="1" conaffinity="1" solref="0.002 1" solimp="0.99 0.999 0.0001" condim="6" />
+      <geom name="pallet_block_left" type="box" size="0.275 0.04 0.08" pos="0 0.35 0.05" mass="2" rgba="0.3 0.2 0.1 1" friction="1.5 0.1 0.1" contype="1" conaffinity="1" solref="0.002 1" solimp="0.99 0.999 0.0001" condim="6" />
+      <geom name="pallet_block_right" type="box" size="0.275 0.04 0.08" pos="0 -0.35 0.05" mass="2" rgba="0.3 0.2 0.1 1" friction="1.5 0.1 0.1" contype="1" conaffinity="1" solref="0.002 1" solimp="0.99 0.999 0.0001" condim="6" />
+    </body>
+
+    <!-- 货物1（Y轴正偏移） -->
+    <body name="cargo1" pos="-3 0 0.4">
+      <freejoint/>
+      <geom type="box" size="0.31 0.4 0.15" rgba="1 0.4 0.7 1" mass="50" friction="1.7 1 1" contype="1" conaffinity="1" solref="0.002 1" solimp="0.99 0.999 0.0001" condim="6" />
+    </body>
+
+    <!-- 货物2（Y轴负偏移） -->
+    <!-- <body name="cargo2" pos="0 -0.22 0.4">
+      <freejoint/>
+      <geom type="box" size="0.2 0.2 0.2" rgba="0.2 0.8 0.4 1" mass="50" friction="1.5 1 1" contype="1" conaffinity="1"/>
+    </body> -->
+
+    <!-- 货架（固定在 X=6, Y=0） -->
+    <body name="shelf" pos="6 0 0">
+      <geom type="box" size="0.04 0.04 1.0" pos="-0.4 -1.0 1.0" rgba="0.4 0.4 0.4 1" contype="1" conaffinity="1"/>
+      <geom type="box" size="0.04 0.04 1.0" pos="-0.4  1.0 1.0" rgba="0.4 0.4 0.4 1" contype="1" conaffinity="1"/>
+      <geom type="box" size="0.04 0.04 1.0" pos=" 0.4 -1.0 1.0" rgba="0.4 0.4 0.4 1" contype="1" conaffinity="1"/>
+      <geom type="box" size="0.04 0.04 1.0" pos=" 0.4  1.0 1.0" rgba="0.4 0.4 0.4 1" contype="1" conaffinity="1"/>
+      <geom type="box" size="0.4 1.0 0.02" pos="0 0 0.6" rgba="0.5 0.3 0.1 1" contype="1" conaffinity="1"/>
+      <geom type="box" size="0.4 1.0 0.02" pos="0 0 1.2" rgba="0.5 0.3 0.1 1" contype="1" conaffinity="1"/>
+    </body>
+
+    <!-- 叉车：初始 Z = 0.0 -->
+    <body name="forklift" pos="0 -4 0.0">
+      <freejoint name="root_joint"/>
+      <geom name="chassis" type="box" size="1.17 0.6 0.15" pos="0 0 0.56" rgba="0.9 0.7 0 1" mass="450" contype="1" conaffinity="1"/>
+      <geom name="cabin" type="box" size="0.4 0.5 0.5" pos="-0.3 0 1.06" rgba="0.5 0.5 0.5 1" mass="150" contype="1" conaffinity="1"/>
+      <!-- 修改：将配重块 Y 半尺寸从 0.3 缩小至 0.1，避免阻碍后轮转向 -->
+      <geom name="counterweight" type="box" size="0.4 0.1 0.2" pos="-1.0 0 0.4" rgba="0.2 0.2 0.2 1" mass="500" contype="1" conaffinity="1"/>
+
+      <!-- 车体传感器 -->
+      <site name="sensor_mast"   pos="1.2 0 0.65" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+      <site name="sensor_front"  pos="0.9 0 0.4" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+      <site name="sensor_rear"   pos="-0.9 0 0.4" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+      <site name="sensor_left"   pos="0 0.6 0.5" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+      <site name="sensor_right"  pos="0 -0.6 0.5" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+      
+      <!-- 车尾部雷达小球 -->
+      <site name="lidar_rear" pos="-1.42 0 0.4" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+
+      <!-- 前轴驱动轮 -->
+      <body name="front_axle" pos="0.9 0 0.2">
+        <body name="wheel_front_left" pos="0 0.5 0">
+          <!-- 修改：增加 armature 防止轮子过于灵活抖动 -->
+          <joint name="spin_front_left" type="hinge" axis="0 1 0" armature="0.1"/>
+          <!-- 恢复为原始 friction，仅加入接触软度参数 -->
+          <geom name="fl_tire" type="cylinder" size="0.2 0.08" fromto="0 -0.08 0 0 0.08 0"
+                rgba="0.2 0.2 0.2 1" mass="30" friction="2.5 1.5 0.2" 
+                solref="0.05 1" solimp="0.9 0.95 0.01 0.5 2" contype="1" conaffinity="1"/>
+        </body>
+        <body name="wheel_front_right" pos="0 -0.5 0">
+          <!-- 修改：增加 armature 防止轮子过于灵活抖动 -->
+          <joint name="spin_front_right" type="hinge" axis="0 1 0" armature="0.1"/>
+          <!-- 恢复为原始 friction，仅加入接触软度参数 -->
+          <geom name="fr_tire" type="cylinder" size="0.2 0.08" fromto="0 -0.08 0 0 0.08 0"
+                rgba="0.2 0.2 0.2 1" mass="30" friction="2.5 1.5 0.2" 
+                solref="0.05 1" solimp="0.9 0.95 0.01 0.5 2" contype="1" conaffinity="1"/>
+        </body>
+      </body>
+
+      <!-- 后轴转向轮 -->
+      <body name="rear_axle" pos="-0.9 0 0.2">
+        <body name="steer_left" pos="0 0.5 0">
+          <inertial pos="0 0 0" mass="1" diaginertia="0.01 0.01 0.01"/>
+          <!-- 修改：恢复 damping=2，并增加 armature。增加 range 限制保证不突破物理极限 -->
+          <joint name="steer_left_joint" type="hinge" axis="0 0 1" damping="2" armature="0.05" range="-1.315 1.315" limited="true"/>
+          <body name="wheel_rear_left" pos="0 0 0">
+            <!-- 修改：增加 armature -->
+            <joint name="spin_rear_left" type="hinge" axis="0 1 0" armature="0.1"/>
+            <!-- 恢复为原始 friction，仅加入接触软度参数 -->
+            <geom name="rl_tire" type="cylinder" size="0.2 0.08" fromto="0 -0.08 0 0 0.08 0"
+                  rgba="0.2 0.2 0.2 1" mass="30" friction="2.5 1.5 0.2" 
+                  solref="0.05 1" solimp="0.9 0.95 0.01 0.5 2" contype="1" conaffinity="1"/>
+          </body>
+        </body>
+        <body name="steer_right" pos="0 -0.5 0">
+          <inertial pos="0 0 0" mass="1" diaginertia="0.01 0.01 0.01"/>
+          <!-- 修改：恢复 damping=2，并增加 armature。增加 range 限制保证不突破物理极限 -->
+          <joint name="steer_right_joint" type="hinge" axis="0 0 1" damping="2" armature="0.05" range="-1.315 1.315" limited="true"/>
+          <body name="wheel_rear_right" pos="0 0 0">
+            <!-- 修改：增加 armature -->
+            <joint name="spin_rear_right" type="hinge" axis="0 1 0" armature="0.1"/>
+            <!-- 恢复为原始 friction，仅加入接触软度参数 -->
+            <geom name="rr_tire" type="cylinder" size="0.2 0.08" fromto="0 -0.08 0 0 0.08 0"
+                  rgba="0.2 0.2 0.2 1" mass="30" friction="2.5 1.5 0.2" 
+                  solref="0.05 1" solimp="0.9 0.95 0.01 0.5 2" contype="1" conaffinity="1"/>
+          </body>
+        </body>
+      </body>
+
+      <!-- 门架 -->
+      <body name="mast" pos="1.2 0 0.15">
+        <inertial pos="0 0 0.5" mass="120" diaginertia="2 2 2"/>
+        <geom name="mast_back" type="box" size="0.05 0.5 1.0" pos="0 0 1.0" rgba="0.3 0.3 0.3 1" mass="120" contype="1" conaffinity="1"/>
+        
+        <!-- 门架雷达小球 -->
+        <site name="lidar_mast" pos="0.07 0 0.15" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+<!-- 【方向②】打载货的测距球：门架中线上 8 个高度 × 左中右 -->
+<site name="radar_load_z1" pos="0.07 0.0 0.3" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z1_l" pos="0.07 0.18 0.3" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z1_r" pos="0.07 -0.18 0.3" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z2" pos="0.07 0.0 0.4" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z2_l" pos="0.07 0.18 0.4" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z2_r" pos="0.07 -0.18 0.4" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z3" pos="0.07 0.0 0.5" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z3_l" pos="0.07 0.18 0.5" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z3_r" pos="0.07 -0.18 0.5" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z4" pos="0.07 0.0 0.6" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z4_l" pos="0.07 0.18 0.6" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z4_r" pos="0.07 -0.18 0.6" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z5" pos="0.07 0.0 0.7" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z5_l" pos="0.07 0.18 0.7" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z5_r" pos="0.07 -0.18 0.7" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z6" pos="0.07 0.0 0.8" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z6_l" pos="0.07 0.18 0.8" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z6_r" pos="0.07 -0.18 0.8" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z7" pos="0.07 0.0 0.9" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z7_l" pos="0.07 0.18 0.9" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z7_r" pos="0.07 -0.18 0.9" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z8" pos="0.07 0.0 1.0" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z8_l" pos="0.07 0.18 1.0" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+<site name="radar_load_z8_r" pos="0.07 -0.18 1.0" type="sphere" size="0.02" rgba="0.2 0.6 1 0.6"/>
+
+        <!-- 货叉正上方雷达小球 (固定于门架：Z在门架顶下2cm即1.98，X贴门架1cm即0.06) -->
+        <site name="lidar_fork_top_left" pos="0.06 0.15 1.98" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+        <site name="lidar_fork_top_right" pos="0.06 -0.15 1.98" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+
+        <!-- 货叉中部雷达小球 (固定于门架：Z在门架顶下1.1m即0.9，X贴门架1cm即0.06) -->
+        <site name="lidar_fork_mid_left" pos="0.06 0.15 0.9" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+        <site name="lidar_fork_mid_right" pos="0.06 -0.15 0.9" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+
+        <!-- 货叉 -->
+        <body name="forks" pos="0.07 0 0.1">
+          <inertial pos="0.5 0 0.15" mass="50" diaginertia="5 5 5"/>
+          <joint name="lift_joint" type="slide" axis="0 0 1" range="-0.23 1.45" damping="150" armature="5"/>
+          <geom euler="0 -0.02094 0" name="left_fork" type="box" size="0.45 0.06 0.025" pos="0.45 0.1725 0.025" rgba="0.4 0.4 0.4 1" mass="25" friction="3 0.2 0.1" contype="1" conaffinity="1" />
+          <geom euler="0 -0.02094 0" name="right_fork" type="box" size="0.45 0.06 0.025" pos="0.45 -0.1725 0.025" rgba="0.4 0.4 0.4 1" mass="25" friction="3 0.2 0.1" contype="1" conaffinity="1" />
+
+          <site name="lidar_fork_left"  pos="0.04 0.15 0.07" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+          <site name="lidar_fork_right" pos="0.04 -0.15 0.07" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+
+          <!-- 货叉下方雷达小球 (固定于货叉：贴货叉下2cm即Z=-0.02，比上方小球靠前15cm即X=0.14) -->
+          <site name="lidar_fork_bottom_left" pos="0.14 0.15 -0.02" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+          <site name="lidar_fork_bottom_right" pos="0.14 -0.15 -0.02" type="sphere" size="0.02" rgba="0 1 0 0.5"/>
+        </body>
+      </body>
+    </body>
+
+    <camera name="track" mode="track" target="forklift" pos="0 -4 3"/>
+  </worldbody>
+
+  <actuator>
+    <motor name="motor_front_left" joint="spin_front_left" ctrllimited="true" ctrlrange="-900 900" gear="5.0"/>
+    <motor name="motor_front_right" joint="spin_front_right" ctrllimited="true" ctrlrange="-900 900" gear="5.0"/>
+    <!-- 修改：将 ctrlrange 扩展至 -1.315 1.315，适配 1.31rad 最大物理转向角 -->
+    <position name="steer_left_act" joint="steer_left_joint" ctrllimited="true" ctrlrange="-1.315 1.315" kp="3000" kv="300" forcerange="-5000 5000"/>
+    <position name="steer_right_act" joint="steer_right_joint" ctrllimited="true" ctrlrange="-1.315 1.315" kp="3000" kv="300" forcerange="-5000 5000"/>
+    <position name="lift_act" joint="lift_joint" ctrllimited="true" ctrlrange="-0.23 1.45" kp="5000" kv="2000"/>
+    <motor name="brake_front_left" joint="spin_front_left" ctrllimited="true" ctrlrange="-1500 0" gear="1.0"/>
+    <motor name="brake_front_right" joint="spin_front_right" ctrllimited="true" ctrlrange="-1500 0" gear="1.0"/>
+  </actuator>
+</mujoco>

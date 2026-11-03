@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="robot_env">
+  <worldbody>
+    <body name="stack_A1_L1_pallet" pos="-10 7 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_A1_L1_cargo" pos="-10 7 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_A2_L1_pallet" pos="-6.5 7 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_A2_L1_cargo" pos="-6.5 7 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_A2_L2_pallet" pos="-6.5 7 0.595" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_A2_L2_cargo" pos="-6.5 7 0.92" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_A3_L1_pallet" pos="-3 7 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_A3_L1_cargo" pos="-3 7 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_A4_L1_pallet" pos="0.5 7 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_A4_L1_cargo" pos="0.5 7 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_A4_L2_pallet" pos="0.5 7 0.595" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_A4_L2_cargo" pos="0.5 7 0.92" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_B1_L1_pallet" pos="-10 -1 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_B1_L1_cargo" pos="-10 -1 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_B1_L2_pallet" pos="-10 -1 0.595" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_B1_L2_cargo" pos="-10 -1 0.92" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_B2_L1_pallet" pos="-6.5 -1 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_B2_L1_cargo" pos="-6.5 -1 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_B3_L1_pallet" pos="-3 -1 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_B3_L1_cargo" pos="-3 -1 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_B3_L2_pallet" pos="-3 -1 0.595" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_B3_L2_cargo" pos="-3 -1 0.92" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_B4_L1_pallet" pos="0.5 -1 0.075" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_B4_L1_cargo" pos="0.5 -1 0.4" euler="0 0 1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_P1_L1_pallet" pos="8 -6 0.075" euler="0 0 -1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_P1_L1_cargo" pos="8 -6 0.4" euler="0 0 -1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_P1_L2_pallet" pos="8 -6 0.595" euler="0 0 -1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_P1_L2_cargo" pos="8 -6 0.92" euler="0 0 -1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="stack_P1_L3_pallet" pos="8 -6 1.115" euler="0 0 -1.5708">
+      <freejoint />
+      <geom type="box" size="0.35 0.4 0.015" pos="0 0 0.135" rgba="0.6 0.4 0.2 1" contype="1" conaffinity="1" name="pallet_top" mass="15" friction="1.5 1 1" />
+      <geom type="box" size="0.35 0.035 0.06" pos="0 0 0.06" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_center" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_left" mass="2" friction="1.5 0.1 0.1" />
+      <geom type="box" size="0.35 0.04 0.08" pos="0 -0.35 0.05" rgba="0.3 0.2 0.1 1" contype="1" conaffinity="1" name="pallet_block_right" mass="2" friction="1.5 0.1 0.1" />
+    </body><body name="stack_P1_L3_cargo" pos="8 -6 1.44" euler="0 0 -1.5708">
+      <freejoint />
+      <geom type="box" size="0.31 0.4 0.15" pos="0 0 0" rgba="1 0.4 0.7 1" contype="1" conaffinity="1" mass="50" friction="2.2 1 1" />
+    </body><body name="obstacle_crate_1" pos="12.6 -6.8 0.3" euler="0 0 0">
+      <geom type="box" size="0.3 0.3 0.3" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_crate_2" pos="-14.6 8.6 0.3" euler="0 0 0">
+      <geom type="box" size="0.3 0.3 0.3" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_crate_3" pos="-14.6 -7.4 0.3" euler="0 0 0">
+      <geom type="box" size="0.3 0.3 0.3" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_crate_4" pos="12.6 8.6 0.3" euler="0 0 0">
+      <geom type="box" size="0.3 0.3 0.3" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_wall_n" pos="0 11.5 1" euler="0 0 0">
+      <geom type="box" size="15.75 0.25 1" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_wall_s" pos="0 -8.5 1" euler="0 0 0">
+      <geom type="box" size="15.75 0.25 1" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_wall_w" pos="-15.5 1.5 1" euler="0 0 0">
+      <geom type="box" size="0.25 10.25 1" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="obstacle_wall_e" pos="15.5 1.5 1" euler="0 0 0">
+      <geom type="box" size="0.25 10.25 1" pos="0 0 0" rgba="0.7 0.2 0.2 1" contype="1" conaffinity="1" mass="10" friction="1.5 1 1" />
+    </body><body name="forklift_init" pos="12.5 3.1 0.15" euler="0 0 3.14159">
+      <geom type="box" size="1.17 0.6 0.15" pos="0 0 0" rgba="0.2 0.6 1 1" contype="0" conaffinity="0" name="forklift_chassis" />
+    </body>
+  </worldbody>
+</mujoco>

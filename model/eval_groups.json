@@ -1,0 +1,156 @@
+{
+  "gen_seed": 317031,
+  "targets_pool": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "B1",
+    "B2",
+    "B3",
+    "B4"
+  ],
+  "note": "取货固定为 P1 第 3/2/1 层；放货目标从 A/B 排货堆中随机（组内不重复）",
+  "groups": [
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "A1",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "B4",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "A3",
+        "kind": "stack"
+      }
+    ],
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "A2",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "B3",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "A1",
+        "kind": "stack"
+      }
+    ],
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "B2",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "A2",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "A4",
+        "kind": "stack"
+      }
+    ],
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "A1",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "A3",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "B3",
+        "kind": "stack"
+      }
+    ],
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "B3",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "B1",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "A4",
+        "kind": "stack"
+      }
+    ],
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "B3",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "B1",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "A1",
+        "kind": "stack"
+      }
+    ],
+    [
+      {
+        "rnd": 1,
+        "pick_layer": 3,
+        "target": "B1",
+        "kind": "stack"
+      },
+      {
+        "rnd": 2,
+        "pick_layer": 2,
+        "target": "B4",
+        "kind": "stack"
+      },
+      {
+        "rnd": 3,
+        "pick_layer": 1,
+        "target": "B3",
+        "kind": "stack"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,8 @@
+numpy==1.26.4
+mujoco==3.12.0
+gymnasium==1.3.0
+stable-baselines3==2.9.0
+torch
+opencv-python
+tensorboard
+pynput

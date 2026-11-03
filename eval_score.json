@@ -1,0 +1,44 @@
+{
+  "version": "v3_fwd046",
+  "changes": [
+    {"file": "model/warehouse_env.xml",
+     "what": "pallet_block_center size z 0.06→0.08、pos z 0.06→0.05（中间承重块补齐，三点支撑）"},
+    {"file": "test_5_warehouse.py",
+     "const": "PROG_FEED_GAP_TARGET_M", "value": 0.046,
+     "what": "放货前移送入改为纵向闭环：门架→货堆面 与 门架→载货后表面 之差开到 4.6 厘米就停"},
+    {"file": "test_5_warehouse.py",
+     "what": "对准权重候选表首位换成 robot/ppo_3_v3.zip"}
+  ],
+  "chain": "h0_champ → rp_fixpack → s_overshoot35 → r_hfix → r_faststall → r_redock2 → r_turn6k → r_turn6k_v3 → v3_fwd046",
+  "caliber": "冠军自身统计（全部评测波次按「任务+seed+组+轮」去重，共 166 套任务×seed）",
+  "rounds": 496,
+  "ok_rounds": 485,
+  "score": {
+    "S": 97.78,
+    "A": 69.68,
+    "E": 61.23,
+    "total": 77.54,
+    "weights": "0.4*S+0.2*A+0.4*E（物理步口径）",
+    "E_formula": "100*(500000-N_phys)/250000",
+    "N_phys": 346935.0,
+    "median_pos_cm": 3.58,
+    "median_yaw_deg": 0.80,
+    "p90_pos_cm": 6.38,
+    "p90_yaw_deg": 2.00,
+    "worst_ok_pos_cm": 9.84,
+    "worst_ok_yaw_deg": 4.30,
+    "fail_rounds": 11,
+    "fail_breakdown": {"碰撞": 6, "近失(10~15.5cm)": 5}
+  },
+  "paired_check": {
+    "caliber": "同波配对（与上一代冠军 r_turn6k_v3）",
+    "rounds": 126,
+    "S": 99.21,
+    "N_phys": 350349,
+    "total": 77.85,
+    "delta_vs_prev": {"ok_rounds": "+5", "A": "+7.56", "N_phys_pct": -2.4, "total": "+4.47"},
+    "precision_sd_cm": {"longitudinal": [4.27, 2.09], "lateral": [3.46, 3.34],
+                        "yaw_deg": [0.76, 0.64], "pos_cm": [2.60, 1.77]}
+  },
+  "files": ["docs/46_报告.md", "docs/提交包说明_与冠军等价性.md", "README.md"]
+}
